@@ -11,10 +11,16 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html')
+      },
+      output: {
+        manualChunks: undefined
       }
-    }
+    },
+    sourcemap: true
   },
   server: {
-    port: 3000
-  }
+    port: 3000,
+    open: true
+  },
+  base: '/'
 }) 
