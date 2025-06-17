@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubit - Λύσεις Πληροφορικής</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/qubit-logo.png" alt="Cubit" style="max-width: 120px; height: auto;">
+            </div>
+            <div class="nav-links">
+                <a href="#hero">Σχετικά</a>
+                <a href="#services">Προϊόντα</a>
+                <a href="#case-studies">Case Studies</a>
+                <a href="#contact">Επικοινωνία</a>
+            </div>
+        </nav>
+
+        <section class="hero" id="hero">
+            <div class="hero-content" style="margin: 4rem auto 0 auto; align-items: center; justify-content: center;">
+                <h1 class="animate-text">Καινοτόμες Λύσεις<br>Πληροφορικής</h1>
+                <p class="subtitle">Εξειδικευόμαστε στην ανάπτυξη προσαρμοσμένων λύσεων για επιχειρήσεις λιανικής,<br>σούπερ μάρκετ και αποθήκες.</p>
+                <p class="secondary-subtitle">Κάθε έργο είναι μοναδικό. Σχεδιάζουμε αξιόπιστες λύσεις που<br>ευθυγραμμίζονται πλήρως με τις λειτουργικές και οικονομικές σας ανάγκες.</p>
+                <a href="#services" class="cta-button">Δείτε τις Λύσεις μας</a>
+            </div>
+            <canvas id="wire-cube-canvas" width="420" height="420" style="border-radius:8px;"></canvas>
+        </section>
+
+        <section id="services" class="services">
+            <div class="services-container">
+                <div class="service-item" data-scroll>
+                    <div class="service-image">
+                        <div class="logo-container wms-logo">
+                            <span class="logo-prefix">Reflexis</span>
+                            <span class="logo-suffix">WMS</span>
+                            <div class="logo-dot"></div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h2>ReflexisWMS</h2>
+                        <p>Το σύστημα Reflexis WMS για τη διαχείριση αποθήκης, αυτοματοποιεί και επιταχύνει τις διαδικασίες με αποτέλεσμα τη σωστή λειτουργία και οργάνωση. Ταχύτητα στις συναλλαγές και άμεση ανταπόκριση χωρίς λάθη φέρνουν το μέλλον πιο γρήγορα στην επιχείρησή σας.</p>
+                        <a href="#" class="service-button">Δείτε το προϊόν</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-scroll>
+                    <div class="service-image">
+                        <div class="logo-container erp-logo">
+                            <span class="logo-prefix">Reflexis</span>
+                            <span class="logo-suffix">ERP</span>
+                            <div class="logo-dot"></div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h2>ReflexisERP</h2>
+                        <p>Το Reflexis ERP είναι ένα ολοκληρωμένο πληροφοριακό σύστημα που αξιοποιεί όλες τις νέες τεχνολογίες, καλύπτει πλήρως τις επιχειρηματικές ανάγκες και ανταποκρίνεται στις απαιτήσεις για ενιαία διαχείριση των δεδομένων. Το σύστημα είναι ανοικτής αρχιτεκτονικής, που συνεργάζεται με όλα τα...</p>
+                        <a href="#" class="service-button">Δείτε το προϊόν</a>
+                    </div>
+                </div>
+
+                <div class="service-item" data-scroll>
+                    <div class="service-image">
+                        <div class="logo-container retail-logo">
+                            <span class="logo-prefix">Reflexis</span>
+                            <span class="logo-suffix">Retail</span>
+                            <div class="logo-dot"></div>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h2>ReflexisRetail</h2>
+                        <p>Στόχος της εφαρμογής είναι να καλύψει με τον καλύτερο δυνατό τρόπο τις ανάγκες των καταστημάτων λιανικής πώλησης και να κάνει πιο εύκολη τη ροή εργασίας μειώνοντας σημαντικά τα λάθη. Το σύστημα βασίζεται στο σύστημα εφαρμογών Reflexis Store, το οποίο εκτός από την...</p>
+                        <a href="#" class="service-button">Δείτε το προϊόν</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-studies" class="case-studies">
+            <div class="case-studies-container">
+                <h2 class="section-title">Case Studies</h2>
+                
+                <div class="case-study-item" data-scroll>
+                    <div class="case-study-logo">
+                        <img src="assets/jumbo-logo.svg" alt="Jumbo" class="company-logo">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Jumbo</h3>
+                        <p>Η JUMBO αναζήτησε μια ολοκληρωμένη λύση για τη διαχείριση των λιανικών πωλήσεων των καταστημάτων της στην Ελλάδα, την Κύπρο, τη Βουλγαρία και τη Ρουμανία. Η εφαρμογή που σχεδιάσαμε βασίστηκε στο Reflexis και ενσωματώνει την τοπική νομοθεσία και γλώσσα κάθε χώρας.</p>
+                        <p>Το σύστημα υποστηρίζει τόσο την αποκεντρωμένη διαχείριση των καταστημάτων όσο και την κεντρική διοίκηση, προσφέροντας πλήρη έλεγχο και αναφορές σε πραγματικό χρόνο.</p>
+                    </div>
+                </div>
+
+                <div class="case-study-item" data-scroll>
+                    <div class="case-study-logo">
+                        <img src="assets/masoutis-logo.svg" alt="Μασούτης" class="company-logo">
+                    </div>
+                    <div class="case-study-content">
+                        <h3>Μασούτης</h3>
+                        <p>Με 40 χρόνια παρουσίας στην ελληνική αγορά, η Μασούτης επέλεξε τη στρατηγική της συνεχούς ανάπτυξης και βελτίωσης. Μέσω της συνεργασίας μας, υλοποιήσαμε ένα ολοκληρωμένο σύστημα που ενισχύει την ανταγωνιστικότητα της εταιρείας.</p>
+                        <p>Η λύση μας εστιάζει στην αυτοματοποίηση διαδικασιών, την αποτελεσματική διαχείριση αποθεμάτων και την άμεση εξυπηρέτηση πελατών, συμβάλλοντας στην επίτευξη των στρατηγικών στόχων της εταιρείας.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>CUBIT A.E.</h3>
+                <div class="footer-info">
+                    <div class="footer-row">
+                        <span class="footer-icon" style="color:#9b6bdc;">&#x1F4CD;</span>
+                        <span>Πεντέλης 124,<br>151 26 Μαρούσι<br>ΑΡ. Γ.Ε.ΜΗ 006099301000</span>
+                    </div>
+                    <div class="footer-row">
+                        <span class="footer-icon" style="color:#8cc63f;">&#x260E;</span>
+                        <span>210 8037790</span>
+                    </div>
+                    <div class="footer-row">
+                        <span class="footer-icon" style="color:#4a90e2;">&#x1F5C3;</span>
+                        <span>210 8037708</span>
+                    </div>
+                    <div class="footer-row">
+                        <span class="footer-icon" style="color:#e4007c;">&#x2709;</span>
+                        <span>info@cubit.gr</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Η ΕΤΑΙΡΕΙΑ</h3>
+                <ul class="footer-links">
+                    <li>Θέσεις Εργασίας</li>
+                    <li>Οικονομικά Στοιχεία</li>
+                    <li>Προϊόντα</li>
+                    <li>Πελάτες</li>
+                    <li>Δίκτυο Συνεργατών</li>
+                    <li>Υπηρεσίες</li>
+                    <li>Όροι Χρήσης</li>
+                    <li>Πολιτική Cookies</li>
+                    <li>Πολιτική Απορρήτου</li>
+                    <li>Επικοινωνία</li>
+                    <li>Νέα</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>FOLLOW US</h3>
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-icon" style="background:#3b5998;"><span style="color:#222;font-weight:bold;">f</span></a>
+                    <a href="#" class="footer-social-icon" style="background:#0077b5;"><span style="color:#222;font-weight:bold;">in</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

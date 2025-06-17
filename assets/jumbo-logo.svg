@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="120" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .jumbo-text { font-family: 'Arial Rounded MT Bold', Arial, sans-serif; font-weight: bold; }
+        .j { fill: #00A7E1; }
+        .u { fill: #7AB800; }
+        .m { fill: #E4007C; }
+        .b { fill: #FF6B00; }
+        .o { fill: #9B26B6; }
+    </style>
+    <text x="30" y="90" class="jumbo-text" font-size="100" letter-spacing="2">
+        <tspan class="j">J</tspan>
+        <tspan class="u">u</tspan>
+        <tspan class="m">m</tspan>
+        <tspan class="b">b</tspan>
+        <tspan class="o">o</tspan>
+    </text>
+</svg> 

@@ -51,9 +51,9 @@
     "typescript": "^5.7.3"
   },
   "peerDependencies": {
+    "@nuxt/kit": ">=3.0.0",
     "react": ">=17.0.0",
-    "vue": ">=3.0.0",
-    "@nuxt/kit": ">=3.0.0"
+    "vue": ">=3.0.0"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -94,5 +94,9 @@
       "default": "./dist/nuxt/runtime/*.mjs"
     },
     "./dist/*": "./dist/*"
+  },
+  "dependencies": {
+    "@mlightcad/three-viewcube": "^0.0.10",
+    "three": "^0.177.0"
   }
 }
