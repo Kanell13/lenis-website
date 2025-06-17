@@ -99,24 +99,79 @@ body {
     align-items: center;
     justify-content: center;
     padding: 7rem 2rem 5rem 2rem;
-    min-height: 70vh;
+    min-height: 90vh;
     background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
     gap: 2rem;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.parallax-bg::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 120%;
+    height: 140%;
+    background: radial-gradient(circle at center, rgba(155, 107, 220, 0.1) 0%, rgba(74, 144, 226, 0.05) 50%, transparent 70%);
+    transform-origin: center center;
+}
+
+.parallax-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(155, 107, 220, 0.1) 0%, rgba(74, 144, 226, 0.05) 100%);
+    pointer-events: none;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 5%;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    bottom: 15%;
+    right: 10%;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    top: 20%;
+    right: 15%;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 60%;
     width: 100%;
     text-align: left;
-    margin-top: 2rem;
-    padding-right: 0;
+    margin: 4rem 0 0 0;
+    padding: 0;
 }
 
 #wire-cube-canvas {
+    position: relative;
+    z-index: 1;
     display: block;
     width: 420px;
     height: 420px;
     border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
 #cube-container {
@@ -147,7 +202,8 @@ body {
     text-shadow: none;
 }
 
-.hero .subtitle {
+.hero .subtitle,
+.hero .secondary-subtitle {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -155,22 +211,16 @@ body {
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease forwards 0.8s;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
     color: var(--text-secondary);
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .hero .secondary-subtitle {
     font-size: 1.1rem;
-    line-height: 1.6;
     margin-bottom: 2.5rem;
-    color: var(--text-secondary);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards 1s;
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    animation: fadeInUp 0.8s ease forwards 1s;
 }
 
 .cta-button {
@@ -232,6 +282,8 @@ body {
 }
 
 .service-item {
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 60px;
@@ -243,10 +295,29 @@ body {
     padding: 2.5rem;
     box-shadow: 0 4px 24px rgba(0,0,0,0.05);
     border: 1px solid #e0e2e6;
+    user-select: text !important;
+    pointer-events: auto !important;
 }
 
 .service-item.is-inview {
     opacity: 1;
+    transform: translateY(0);
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(155, 107, 220, 0.05) 0%, rgba(74, 144, 226, 0.02) 100%);
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 0;
+}
+
+.service-item.is-inview::before {
     transform: translateY(0);
 }
 
@@ -282,6 +353,10 @@ body {
 .service-content {
     flex: 1;
     padding: 20px;
+    user-select: text !important;
+    pointer-events: auto !important;
+    z-index: 1;
+    position: relative;
 }
 
 .service-content h2 {
@@ -309,6 +384,11 @@ body {
     border-radius: 4px;
     font-weight: 600;
     transition: all var(--transition-duration) ease;
+    cursor: pointer;
+    user-select: text !important;
+    pointer-events: auto !important;
+    z-index: 1;
+    position: relative;
 }
 
 /* Specific service button colors */
@@ -689,5 +769,118 @@ body {
     }
     .footer-col {
         margin-bottom: 40px;
+    }
+}
+
+/* News Section Styles */
+.news-section {
+    padding: 100px 4rem;
+    background: var(--primary-color);
+}
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.news-item {
+    display: flex;
+    align-items: flex-start;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    padding: 2.5rem;
+    gap: 40px;
+    transition: box-shadow 0.3s;
+    border: 1px solid #e0e2e6;
+}
+.news-item:hover {
+    box-shadow: 0 8px 32px rgba(74, 144, 226, 0.10);
+    border-color: var(--accent-blue);
+}
+.news-icon {
+    flex: 0 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.news-content {
+    flex: 1;
+}
+.news-date {
+    color: var(--accent-blue);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01em;
+}
+.news-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+.news-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+.news-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 16px rgba(74, 144, 226, 0.10);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+}
+.news-button:hover {
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(74, 144, 226, 0.18);
+    color: #fff;
+}
+@media (max-width: 900px) {
+    .news-list {
+        gap: 40px;
+    }
+    .news-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 20px;
+    }
+    .news-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 600px) {
+    .news-section {
+        padding: 60px 1rem;
+    }
+    .news-item {
+        padding: 1.2rem;
+    }
+    .news-title {
+        font-size: 1.3rem;
+    }
+    .news-desc {
+        font-size: 1rem;
+    }
+    .news-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
     }
 } 

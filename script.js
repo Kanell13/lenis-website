@@ -22,6 +22,10 @@ requestAnimationFrame(raf);
 const navbar = document.querySelector('.navbar');
 const serviceItems = document.querySelectorAll('.service-item');
 const caseStudyItems = document.querySelectorAll('.case-study-item');
+const heroContent = document.querySelector('.hero-content');
+const wireCubeCanvas = document.getElementById('wire-cube-canvas');
+const parallaxShapes = document.querySelectorAll('.parallax-shape');
+const parallaxBg = document.querySelector('.parallax-bg');
 let lastScrollTop = 0;
 
 // Function to check if element is in viewport
@@ -34,12 +38,35 @@ function isInViewport(element) {
 }
 
 // Handle scroll animations
-lenis.on('scroll', ({ scroll }) => {
+lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
     // Add/remove scrolled class based on scroll position
     if (scroll > 50) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
+    }
+    
+    // Parallax effect for hero content
+    if (heroContent) {
+        heroContent.style.transform = `translateY(${scroll * 0.2}px)`;
+    }
+    
+    // Parallax effect for wire cube
+    if (wireCubeCanvas) {
+        wireCubeCanvas.style.transform = `translateY(${scroll * 0.1}px) rotate(${scroll * 0.02}deg)`;
+    }
+    
+    // Parallax effect for shapes
+    parallaxShapes.forEach((shape, index) => {
+        const speed = 0.05 + (index * 0.02);
+        const yOffset = scroll * speed;
+        const rotation = scroll * 0.02 * (index + 1);
+        shape.style.transform = `translateY(${yOffset}px) rotate(${rotation}deg)`;
+    });
+    
+    // Parallax effect for background
+    if (parallaxBg) {
+        parallaxBg.style.transform = `translateY(${scroll * 0.08}px) scale(${1 + Math.abs(velocity) * 0.001})`;
     }
     
     // Animate service items when they come into view
