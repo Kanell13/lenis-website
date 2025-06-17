@@ -5,9 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "vercel-build": "vite build"
+    "build": "vite build && cp -r assets dist/",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@mlightcad/three-viewcube": "^0.0.10",
